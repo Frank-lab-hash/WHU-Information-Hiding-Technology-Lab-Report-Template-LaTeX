@@ -1,0 +1,122 @@
+# ============================================================
+#  .gitignore —— 信息隐藏技术实验报告 (LaTeX / XeLaTeX)
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. macOS 系统文件夹与文件
+# ------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.apdisk
+.AppleDouble
+.LSOverride
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+__MACOSX/
+*.icloud
+Icon?
+
+# ------------------------------------------------------------
+# 2. LaTeX 编译中间产物（源代码之外的临时文件）
+# ------------------------------------------------------------
+# 辅助与日志
+*.aux
+*.log
+*.out
+*.spl
+*.brf
+*.upa
+*.upb
+*.auxlock
+*.loa
+*.soc
+*.xwm
+*.thm
+*.bibtoolrsc
+*.pdfsync
+*.comment.cut
+
+# 目录 / 图表索引
+*.toc
+*.lof
+*.lot
+*.mtc
+*.mtc0
+*.ptc
+
+# 交叉引用 / 超链接
+*.nav
+*.snm
+*.vrb
+*.xdy
+
+# 参考文献（BibTeX / Biber）
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.sbb
+
+# 索引与术语表（makeindex / glossaries）
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+*.nlg
+*.glsdefs
+*.lvr
+*.lsr
+*.maf
+
+# latexmk / synctex / 其他引擎产物
+*.fls
+*.fdb_latexmk
+*.synctex
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.dvi
+*.lg
+
+# 中间输出目录
+latex.out/
+auto/
+.texpadtmp/
+build/
+out/
+
+# ------------------------------------------------------------
+# 3. LaTeX 编译结果（生成的 PDF）
+#    只忽略根目录下的成品 PDF，子目录（如 imgs/ 中的图片 PDF）
+#    仍会被正常跟踪，以免误伤作为素材的 PDF 图片。
+# ------------------------------------------------------------
+/*.pdf
+
+# ------------------------------------------------------------
+# 4. 编辑器 / 临时与备份文件
+# ------------------------------------------------------------
+*~
+*.bak
+*.backup
+*.old
+*.orig
+*.swp
+*.swo
+.#*
+\#*\#
+*.tmp
