@@ -27,7 +27,12 @@
 ## 快速开始
 
 ```bash
-git clone <本仓库地址>
+# SSH
+git clone git@github.com:Frank-lab-hash/WHU-Information-Hiding-Technology-Lab-Report-Template-LaTeX.git
+
+# 或 HTTPS
+git clone https://github.com/Frank-lab-hash/WHU-Information-Hiding-Technology-Lab-Report-Template-LaTeX.git
+
 cd WHU-Information-Hiding-Technology-Lab-Report-Template-LaTeX
 make            # 编译，生成 lab_report(zh_cn).pdf
 make view       # 用系统默认阅读器打开生成的 PDF
