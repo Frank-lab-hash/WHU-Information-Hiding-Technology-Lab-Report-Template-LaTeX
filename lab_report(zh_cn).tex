@@ -52,6 +52,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 字体定义
+%
+% 提示：以下字体名沿用原版设置，其中「宋体」「黑体」「楷体」用的是中文本地化
+% 字体名，其余为英文名（SimSun / SimHei / KaiTi / FangSong / Microsoft YaHei /
+% STXingkai / Consolas 等）。
+% 若系统语言不是中文（例如 macOS 的 AppleLocale=en_CN），CoreText / XeTeX 会
+% 按英文名匹配字体，即便已经安装了对应字体，仍可能报：
+%   Package fontspec Error: The font "宋体" cannot be found.
+% 原因是这类字体文件的 family 同时包含英文名与中文名（如 SimSun,宋体），
+% 在英文语言环境下只按英文名解析。
+% 是否调整、如何调整由使用者根据自身编译环境自行决定，模板保持原样。
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainfont{Times New Roman}  %默认英文字体.serif是有衬线字体sans serif无衬线字体
 \setmonofont{Consolas}

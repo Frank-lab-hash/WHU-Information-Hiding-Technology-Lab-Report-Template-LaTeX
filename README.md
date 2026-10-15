@@ -40,8 +40,8 @@ make view       # 用系统默认阅读器打开生成的 PDF
 
 ## 需要修改的地方
 
-1. **封面**（`lab_report(zh_cn).tex` 第 180–186 行）：学号、姓名、实验名称、指导教师
-2. **正文**（第 208 行起）：实验名称、实验目的、实验原理、实验内容、实验环境、实验步骤、实验结果与分析、总结
+1. **封面**（`lab_report(zh_cn).tex` 的 `titlepage` 环境，第 190–196 行）：学号、姓名、实验名称、指导教师
+2. **正文**（第 218 行起）：实验名称、实验目的、实验原理、实验内容、实验环境、实验步骤、实验结果与分析、总结
 3. **插图**：图片放进 `imgs/` 目录，正文中用 `\includegraphics[width=\textwidth]{文件名}` 引用
    （导言区已设置 `\graphicspath{{imgs/}}`，不需要写路径）
 
@@ -80,11 +80,21 @@ make MAIN=my_report
 
 模板沿用原版的字体设置，使用的是一组 Windows / Office 字体：`Times New Roman`、`Consolas`、`宋体`、
 `黑体`、`楷体`、`仿宋`、`微软雅黑`、`SimSun`、`SimHei`、`KaiTi`、`STXingkai`，定义在
-`lab_report(zh_cn).tex` 第 56–72 行。在装有 Office 的 Windows 上一般可直接编译。
+`lab_report(zh_cn).tex` 导言区「字体定义」一节（第 66–82 行），该处也附有相同的说明注释。
+在装有 Office 的 Windows 上一般可直接编译。
 
-若你所处的环境缺少这些字体（例如 macOS），`xelatex` 会报
-`Package fontspec Error: The font "xxx" cannot be found.`。模板保持原样不做改动，
-具体怎么处理（安装对应字体，或按自己的排版需要改写这几行字体设置）由使用者自行决定；
+若编译时出现
+
+```
+Package fontspec Error: The font "宋体" cannot be found.
+```
+
+有两种可能：一是环境里确实没有这些字体；二是字体已经装了仍然报错——这时是因为「宋体」「黑体」
+「楷体」用的是**中文本地化字体名**，而这类字体文件的 family 同时包含英文名与中文名（如 `SimSun,宋体`），
+在系统语言不是中文的环境下（例如 macOS 的 `AppleLocale=en_CN`）只会按英文名解析，于是同一批字体
+`SimSun` 能认、`宋体` 不认。
+
+模板保持原样不做改动，是否调整、如何调整由使用者根据自身的编译环境自行决定；
 定位问题时可以用 `make V=1` 查看引擎的完整输出。
 
 ## 项目结构
